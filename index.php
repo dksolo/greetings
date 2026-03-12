@@ -39,9 +39,14 @@ echo $OUTPUT->header();
 
 // adding personalise message
 if (isloggedin()) {
-    echo '<h2>Greetings, ' . fullname($USER) . '</h2>';
+    $usergreeting = 'Greetings, ' . fullname($USER);
 } else {
-    echo '<h2>Greetings, user</h2>';
+    $usergreeting = 'Greetings, user';
 }
+
+// This passes the $usergreeting variable to the greeting_message template file.
+$templatedata = ['usergreeting' => $usergreeting];
+
+echo $OUTPUT->render_from_template('local_greetings/greeting_message', $templatedata);
 
 echo $OUTPUT->footer();
