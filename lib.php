@@ -27,7 +27,6 @@
  *
  * @param navigation_node $frontpage Node representing the front page in the navigation tree.
  */
-
 function local_greetings_extend_navigation_frontpage(navigation_node $frontpage) {
     $frontpage->add(
         get_string('pluginname', 'local_greetings'),
