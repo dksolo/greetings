@@ -26,25 +26,20 @@ require_once('../../config.php');
 
 $context = context_system::instance();
 $PAGE->set_context($context);
-
 $PAGE->set_url(new moodle_url('/local/greetings/index.php'));
-
 $PAGE->set_pagelayout('standard');
-// Setting page title and heading
 $PAGE->set_title(get_string('pluginname', 'local_greetings'));
 $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 
 
 echo $OUTPUT->header();
 
-// adding personalise message
 if (isloggedin()) {
     $usergreeting = 'Greetings, ' . fullname($USER);
 } else {
     $usergreeting = 'Greetings, user';
 }
 
-// This passes the $usergreeting variable to the greeting_message template file.
 $templatedata = ['usergreeting' => $usergreeting];
 
 echo $OUTPUT->render_from_template('local_greetings/greeting_message', $templatedata);
