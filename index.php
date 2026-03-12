@@ -61,10 +61,7 @@ echo $OUTPUT->render_from_template('local_greetings/greeting_message', $template
 
 $messageform->display();
 $messages = $DB->get_records('local_greetings_messages');
-
-foreach ($messages as $m) {
-    echo '<p>' . $m->message . ', ' . $m->timecreated . '</p>';
-}
-
+$templatedata = ['messages' => array_values($messages)];
+echo $OUTPUT->render_from_template('local_greetings/messages', $templatedata);
 
 echo $OUTPUT->footer();
