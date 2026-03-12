@@ -1,8 +1,6 @@
 # Greetings #
 
-TO-DO Describe the plugin shortly here.
-
-TO-DO Provide more detailed description here.
+A moodle plugin that shows greeting on the page.
 
 ## Installing via uploaded ZIP file ##
 
