@@ -36,10 +36,10 @@ echo $OUTPUT->header();
 
 if (!isloggedin()) {
     $usergreeting = 'Greetings, user';
+} else {
+    require_login(); // This forces the user to log in.
+    $usergreeting = 'Greetings, ' . fullname($USER);
 }
-
-require_login(); // This forces the user to log in.
-$usergreeting = 'Greetings, ' . fullname($USER);
 
 $templatedata = ['usergreeting' => $usergreeting];
 
