@@ -37,4 +37,11 @@ $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 
 echo $OUTPUT->header();
 
+// adding personalise message
+if (isloggedin()) {
+    echo '<h2>Greetings, ' . fullname($USER) . '</h2>';
+} else {
+    echo '<h2>Greetings, user</h2>';
+}
+
 echo $OUTPUT->footer();
