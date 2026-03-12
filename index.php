@@ -37,7 +37,7 @@ if ($data = $messageform->get_data()) {
     $message = required_param('message', PARAM_TEXT);
 
     if (!empty($message)) {
-        $record = new stdClass;
+        $record = new stdClass();
         $record->message = $message;
         $record->timecreated = time();
 
