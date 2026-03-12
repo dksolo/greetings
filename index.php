@@ -22,7 +22,7 @@
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-require_once('../../config.php'); 
+require_once('../../config.php');
 
 $context = context_system::instance();
 $PAGE->set_context($context);
@@ -36,9 +36,9 @@ echo $OUTPUT->header();
 
 if (!isloggedin()) {
     $usergreeting = 'Greetings, user';
-} 
+}
 
-require_login(); // This forces the user to log in
+require_login(); // This forces the user to log in.
 $usergreeting = 'Greetings, ' . fullname($USER);
 
 $templatedata = ['usergreeting' => $usergreeting];
