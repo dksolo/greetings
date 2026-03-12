@@ -15,7 +15,6 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Main file to view greetings
  *
  * @package     local_greetings
  * @copyright   2026 Dmitrii Solopii <dksolo.web.dev@gmail.com>

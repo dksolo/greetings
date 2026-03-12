@@ -13,3 +13,11 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+
+/**
+ *
+ * @package     local_greetings
+ * @copyright   2026 Dmitrii Solopii <dksolo.web.dev@gmail.com>
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
