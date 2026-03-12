@@ -34,11 +34,12 @@ $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 
 echo $OUTPUT->header();
 
-if (isloggedin()) {
-    $usergreeting = 'Greetings, ' . fullname($USER);
-} else {
+if (!isloggedin()) {
     $usergreeting = 'Greetings, user';
-}
+} 
+
+require_login(); // This forces the user to log in
+$usergreeting = 'Greetings, ' . fullname($USER);
 
 $templatedata = ['usergreeting' => $usergreeting];
 
