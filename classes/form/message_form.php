@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/formslib.php');
 
-/** 
+/**
  * Moodle form
  */
 class message_form extends \moodleform {
