@@ -30,6 +30,10 @@ $PAGE->set_url(new moodle_url('/local/greetings/index.php'));
 $PAGE->set_pagelayout('standard');
 $PAGE->set_title(get_string('pluginname', 'local_greetings'));
 $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
+require_login(); // This forces the user to log in.
+if (isguestuser()) {
+    throw new moodle_exception('noguest');
+}
 
 $messageform = new \local_greetings\form\message_form();
 
@@ -52,7 +56,6 @@ echo $OUTPUT->header();
 if (!isloggedin()) {
     $usergreeting = get_string('greetinguser', 'local_greetings');
 } else {
-    require_login(); // This forces the user to log in.
     $usergreeting = get_string('greetingloggedinuser', 'local_greetings', fullname($USER));
 }
 
