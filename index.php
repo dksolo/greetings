@@ -35,10 +35,10 @@ $PAGE->set_heading(get_string('pluginname', 'local_greetings'));
 echo $OUTPUT->header();
 
 if (!isloggedin()) {
-    $usergreeting = 'Greetings, user';
+    $usergreeting = get_string('greetinguser', 'local_greetings');
 } else {
     require_login(); // This forces the user to log in.
-    $usergreeting = 'Greetings, ' . fullname($USER);
+    $usergreeting = get_string('greetingloggedinuser', 'local_greetings', fullname($USER));
 }
 
 $templatedata = ['usergreeting' => $usergreeting];
