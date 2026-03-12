@@ -43,3 +43,11 @@ $PAGE->set_pagelayout('standard');
 
 // 5. Save your work and access the index.php by typing the following url in your web browser: 
 // http://<your-moodle-site>/local/greetings/
+
+//PAGE OUTPUT
+
+// 1. Add the following lines at the end of the index.php file to output the page HTML.
+echo $OUTPUT->header();
+
+echo $OUTPUT->footer();
+
