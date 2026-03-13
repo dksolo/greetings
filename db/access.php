@@ -15,24 +15,27 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Plugin strings are defined here.
  *
  * @package     local_greetings
- * @category    string
  * @copyright   2026 Dmitrii Solopii <dksolo.web.dev@gmail.com>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 defined('MOODLE_INTERNAL') || die();
 
-$string['greetingloggedinuser'] = 'Greetings, {$a}.';
-$string['greetinguser'] = 'Greetings, user.';
-
-$string['pluginname'] = 'Greetings';
-
-$string['postedby'] = 'Posted by {$a}.';
-
-$string['yourmessage'] = 'Your message';
-
-$string['greetings:postmessages'] = 'Post a new message on the Greetings wall';
-$string['greetings:viewmessages'] = 'View messages on the Greetings wall';
+$capabilities = [
+    'local/greetings:postmessages' => [
+        'riskbitmask' => RISK_SPAM,
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => [
+            'user' => CAP_ALLOW,
+        ]
+    ],
+    'local/greetings:viewmessages' => [
+        'captype' => 'read',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => [
+            'user' => CAP_ALLOW,
+        ]
+    ],
+];
